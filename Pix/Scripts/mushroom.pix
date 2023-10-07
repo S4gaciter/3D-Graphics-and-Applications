@@ -1,0 +1,6 @@
+SetResolution(15, 15, 40, 1)
+
+// Black
+SetColor(0, 0, 0, 0)
+
+DrawPixel(5, 0)
