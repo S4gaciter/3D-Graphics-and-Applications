@@ -830,8 +830,8 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\x3daudio.h(164,97
   WaveBankReader.cpp
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\x3daudio.h(164,85): warning C5246: 'X3DAudioDefault_LinearCurvePoints': the initialization of a subobject should be wrapped in braces
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\x3daudio.h(164,97): warning C5246: 'X3DAudioDefault_LinearCurvePoints': the initialization of a subobject should be wrapped in braces
-C:\Users\ericg\Downloads\Pix\X\External\DirectXTK\Audio\WaveBankReader.cpp(35,22): warning C5264: '`anonymous-namespace'::MAX_DATA_SEGMENT_SIZE': 'const' variable is not used
-C:\Users\ericg\Downloads\Pix\X\External\DirectXTK\Audio\WaveBankReader.cpp(30,22): warning C5264: '`anonymous-namespace'::DVD_BLOCK_SIZE': 'const' variable is not used
+C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\X\External\DirectXTK\Audio\WaveBankReader.cpp(35,22): warning C5264: '`anonymous-namespace'::MAX_DATA_SEGMENT_SIZE': 'const' variable is not used
+C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\X\External\DirectXTK\Audio\WaveBankReader.cpp(30,22): warning C5264: '`anonymous-namespace'::DVD_BLOCK_SIZE': 'const' variable is not used
   WAVFileReader.cpp
   Generating Code...
-  DirectXTKAudio_Desktop_2019_Win8.vcxproj -> C:\Users\ericg\Downloads\Pix\X\External\DirectXTK\Audio\Bin\Desktop_2019\x64\Debug\DirectXTKAudioWin8.lib
+  DirectXTKAudio_Desktop_2019_Win8.vcxproj -> C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\X\External\DirectXTK\Audio\Bin\Desktop_2019\x64\Debug\DirectXTKAudioWin8.lib
