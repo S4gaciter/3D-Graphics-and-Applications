@@ -54,3 +54,4 @@
 .vs/X/v17/ipch/AutoPCH/cd14799def3e0fa3/VERTEX.ipch
 .vs/X/v17/ipch/AutoPCH/dcac7e351a0a9d06/CMDDRAWPIXEL.ipch
 .vs/X/v17/ipch/AutoPCH/f5f2a1f397462ea9/CMDADDVERTEX.ipch
+*.ipch

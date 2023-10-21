@@ -1,4 +1,4 @@
-﻿  Rasterizer.cpp
-C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\Pix\Rasterizer.cpp(27,46): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\Pix\Rasterizer.cpp(27,25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+﻿  CmdShowViewport.cpp
+  CommandDictionary.cpp
+  Generating Code...
   Pix.vcxproj -> C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\x64\Debug\Pix.exe
