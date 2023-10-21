@@ -1,9 +1,14 @@
 #include "CommandDictionary.h"
 
+
 #include "CmdDrawPixel.h"
 #include "CmdSetColor.h"
 #include "CmdSetResolution.h"
+#include "CmdSetFillMode.h"
 #include "CmdVarFloat.h"
+#include "CmdBeginDraw.h"
+#include "CmdAddVertex.h"
+#include "CmdEndDraw.h"
 
 CommandDictionary* CommandDictionary::Get()
 {
@@ -18,12 +23,16 @@ CommandDictionary::CommandDictionary()
 	// Setting commands
 	RegisterCommand<CmdSetResolution>();
 	RegisterCommand<CmdSetColor>();
+	RegisterCommand<CmdSetFillMode>();
 
 	// Variable commands
 	RegisterCommand<CmdVarFloat>();
 
 	// Rasterization commands
 	RegisterCommand<CmdDrawPixel>();
+	RegisterCommand<CmdBeginDraw>();
+	RegisterCommand<CmdAddVertex>();
+	RegisterCommand<CmdEndDraw>();
 }
 
 TextEditor::LanguageDefinition CommandDictionary::GenerateLanguageDefinition()

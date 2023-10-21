@@ -15,5 +15,9 @@ public:
 	static float Dot(const Vector2& a, const Vector2& b);
 	static float Dot(const Vector3& a, const Vector3& b);
 	static Vector3 Cross(const Vector3& a, const Vector3& b);
+
+	static float Lerp(const float& a, const float& b, float t);
+	static Vector2 Lerp(const Vector2& a, const Vector2& b, float t);
+	static Vector3 Lerp(const Vector3& a, const Vector3& b, float t);
 };
 
