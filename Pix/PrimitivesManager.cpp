@@ -46,6 +46,7 @@ bool PrimitivesManager::EndDraw()
 				Rasterizer::Get()->DrawPoint(mVertexBuffer[i]);
 			}
 		}
+		return true;
 	}
 	break;
 
@@ -58,6 +59,7 @@ bool PrimitivesManager::EndDraw()
 				Rasterizer::Get()->DrawLine(mVertexBuffer[i - 1], mVertexBuffer[i]);
 			}
 		}
+		return true;
 	}
 	break;
 
@@ -68,12 +70,13 @@ bool PrimitivesManager::EndDraw()
 			std::vector<Vertex> triangle = { mVertexBuffer[i - 2], mVertexBuffer[i - 1], mVertexBuffer[i] };
 			if (Clipper::Get()->ClipTriangle(triangle))
 			{
-				for (size_t t = t; t < triangle.size(); ++t)
+				for (size_t t = i; t < triangle.size(); ++t)
 				{
 					Rasterizer::Get()->DrawTriangle(triangle[0], triangle[t - 1], triangle[t]);
 				}
 			}
 		}
+		return true;
 	}
 	break;
 
