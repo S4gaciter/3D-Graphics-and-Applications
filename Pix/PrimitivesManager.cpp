@@ -1,6 +1,26 @@
 #include "PrimitivesManager.h"
 #include "Rasterizer.h"
 #include "Clipper.h"
+#include "MatrixStack.h"
+#include "Camera.h"
+
+extern float gResolutionX;
+extern float gResolutionY;
+
+namespace
+{
+	Matrix4 GetScreenTransform()
+	{
+		const float hw = gResolutionX * 0.5f;
+		const float hh = gResolutionY * 0.5f;
+		return Matrix4(
+			  hw, 0.0f, 0.0f, 0.0f,
+			0.0f,  -hh, 0.0f, 0.0f,
+			0.0f, 0.0f, 1.0f, 0.0f,
+			  hw,   hh, 0.0f, 1.0f
+		);
+	}
+}
 
 PrimitivesManager::PrimitivesManager()
 {
@@ -18,9 +38,10 @@ PrimitivesManager* PrimitivesManager::Get()
 	return &sInstance;
 }
 
-bool PrimitivesManager::BeginDraw(Topology topology)
+bool PrimitivesManager::BeginDraw(Topology topology, bool applyTransform)
 {
 	mDrawBegin = true;
+	mApplyTransform = applyTransform;
 	mTopology = topology;
 	mVertexBuffer.clear();
 	return true;
@@ -34,7 +55,23 @@ void PrimitivesManager::AddVertex(const Vertex& vertex)
 bool PrimitivesManager::EndDraw()
 {
 	if (!mDrawBegin)
+	{
 		return false;
+	}
+	if (mApplyTransform)
+	{
+		const Matrix4 matWorld = MatrixStack::Get()->GetTransform();
+		const Matrix4 matView = Camera::Get()->GetViewMatrix();
+		const Matrix4 matProj = Camera::Get()->GetProjectionMatrix();
+		const Matrix4 matScreen = GetScreenTransform();
+
+		const Matrix4 matFinal = matWorld * matView * matProj * matScreen;
+
+		for (size_t i = 0; i < mVertexBuffer.size(); ++i)
+		{
+			mVertexBuffer[i].position = MathHelper::TransformCoord(mVertexBuffer[i].position, matFinal);
+		}
+	}
 	switch (mTopology)
 	{
 	case Topology::Point:

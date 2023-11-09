@@ -1,17 +1,1 @@
-﻿  Clipper.cpp
-  CmdAddVertex.cpp
-  CmdBeginDraw.cpp
-  CmdDrawPixel.cpp
-  CmdEndDraw.cpp
-  CmdSetClipping.cpp
-  CmdSetColor.cpp
-  CmdSetFillMode.cpp
-  Graphics.cpp
-  MathHelper.cpp
-  PrimitivesManager.cpp
-  Rasterizer.cpp
-C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\Pix\Rasterizer.cpp(27,46): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\Pix\Rasterizer.cpp(27,25): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
-     Creating library C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\x64\Debug\Pix.lib and object C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\x64\Debug\Pix.exp
-  Pix.vcxproj -> C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\x64\Debug\Pix.exe
+﻿  Pix.vcxproj -> E:\Github\3D-Graphics-and-Applications\x64\Debug\Pix.exe

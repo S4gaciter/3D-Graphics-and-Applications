@@ -26,9 +26,9 @@ Matrix4 Matrix4::RotationY(float rad)
 	const float s = sinf(rad);
 	const float c = cosf(rad);
 	return Matrix4(
-		   c, 0.0f,    s, 0.0f,
+		   c, 0.0f,   -s, 0.0f,
 		0.0f, 1.0f, 0.0f, 0.0f,
-		  -s, 0.0f,    c, 0.0f,
+		   s, 0.0f,    c, 0.0f,
 		0.0f, 0.0f, 0.0f, 1.0f);
 }
 
@@ -46,9 +46,9 @@ Matrix4 Matrix4::RotationZ(float rad)
 Matrix4 Matrix4::Scaling(const Vector3& s)
 {
 	return Matrix4(
-		s.x, 0.0f, 0.0f, 0.0f,
-		0.0f, s.y, 0.0f, 0.0f,
-		0.0f, 0.0f, s.z, 0.0f,
+		 s.x, 0.0f, 0.0f, 0.0f,
+		0.0f,  s.y, 0.0f, 0.0f,
+		0.0f, 0.0f,  s.z, 0.0f,
 		0.0f, 0.0f, 0.0f, 1.0f);
 }
 
@@ -131,7 +131,7 @@ float MathHelper::Dot(const Vector3& a, const Vector3& b)
 Vector3 MathHelper::Cross(const Vector3& a, const Vector3& b)
 {
 	return { (a.y * b.z) - (a.z * b.y), 
-		     (a.x * b.z) - (a.z * b.x), 
+		     (a.z * b.x) - (a.x * b.z), 
 		     (a.x * b.y) - (a.y * b.x)};
 }
 
