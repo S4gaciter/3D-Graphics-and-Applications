@@ -1,6 +1,5 @@
 #include "CommandDictionary.h"
 
-
 #include "CmdDrawPixel.h"
 #include "CmdSetColor.h"
 #include "CmdSetResolution.h"
@@ -25,6 +24,8 @@
 #include "CmdSetCameraFov.h"
 #include "CmdSetCullMode.h"
 #include "CmdEnableDepth.h"
+#include "CmdLights.h"
+#include "CmdMaterial.h"
 
 CommandDictionary* CommandDictionary::Get()
 {
@@ -61,6 +62,19 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetCameraNear>();
 	RegisterCommand<CmdSetCameraFar>();
 	RegisterCommand<CmdSetCameraFov>();
+
+	// Light Commands
+	RegisterCommand<CmdSetLightAmbient>();
+	RegisterCommand<CmdSetLightDiffuse>();
+	RegisterCommand<CmdSetLightSpecular>();
+	RegisterCommand<CmdAddDirectionalLight>();
+	RegisterCommand<CmdAddPointLight>();
+
+	// Material Commands
+	RegisterCommand<CmdSetMaterialAmbient>();
+	RegisterCommand<CmdSetMaterialDiffuse>();
+	RegisterCommand<CmdSetMaterialSpecular>();
+	RegisterCommand<CmdSetMaterialShininess>();
 
 	// Rasterization commands
 	RegisterCommand<CmdDrawPixel>();

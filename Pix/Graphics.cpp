@@ -6,6 +6,8 @@
 #include "Camera.h"
 #include "PrimitivesManager.h"
 #include "DepthBuffer.h"
+#include "LightManager.h"
+#include "MaterialManager.h"
 
 void Graphics::NewFrame()
 {
@@ -15,4 +17,6 @@ void Graphics::NewFrame()
 	Camera::Get()->OnNewFrame();
 	PrimitivesManager::Get()->OnNewFrame();
 	DepthBuffer::Get()->OnNewFrame();
+	LightManager::Get()->OnNewFrame();
+	MaterialManager::Get()->OnNewFrame();
 }

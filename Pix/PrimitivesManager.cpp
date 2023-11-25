@@ -3,6 +3,7 @@
 #include "Clipper.h"
 #include "MatrixStack.h"
 #include "Camera.h"
+#include "LightManager.h"
 
 extern float gResolutionX;
 extern float gResolutionY;
@@ -21,6 +22,13 @@ namespace
 		);
 	}
 
+	Vector3 GetFacingNormal(const Vector3& a, const Vector3& b, const Vector3& c)
+	{
+		const Vector3 v0 = b - a;
+		const Vector3 v1 = c - a;
+		return MathHelper::Cross(v0, v1);
+	}
+
 	bool DrawTriangle(CullMode mode, const Vector3& a, const Vector3& b, const Vector3& c)
 	{
 		if (mode == CullMode::None)
@@ -28,9 +36,7 @@ namespace
 			return true;
 		}
 
-		const Vector3 v0 = b - a;
-		const Vector3 v1 = c - a;
-		Vector3 facingNormal = MathHelper::Cross(a, b);
+		Vector3 facingNormal = GetFacingNormal(a, b, c);
 
 		switch (mode)
 		{
@@ -135,14 +141,32 @@ bool PrimitivesManager::EndDraw()
 			std::vector<Vertex> triangle = { mVertexBuffer[i - 2], mVertexBuffer[i - 1], mVertexBuffer[i] };
 			if (mApplyTransform)
 			{
+				Vector3 facingNormal = GetFacingNormal(triangle[0].position,
+					triangle[1].position, triangle[2].position);
+				// move to world space
+				for (size_t t = 0; t < triangle.size(); ++t)
+				{
+					triangle[t].position = MathHelper::TransformCoord(triangle[t].position, matWorld);
+					triangle[t].normal = MathHelper::TransformNormal(facingNormal, matWorld);
+				}
+				// calculate lighting
+				LightManager* lm = LightManager::Get();
+				for (size_t t = 0; t < triangle.size(); ++t)
+				{
+					Vertex& v = triangle[t];
+					v.color *= lm->ComputeLightColor(v.position, v.normal);
+				}
+				// move to NDC space
 				for (size_t t = 0; t < triangle.size(); ++t)
 				{
 					triangle[t].position = MathHelper::TransformCoord(triangle[t].position, matNDC);
 				}
-				if (!DrawTriangle(mCullMode, triangle[0].position, triangle[1].position, triangle[2].position))
+				if (!DrawTriangle(mCullMode, triangle[0].position, 
+					triangle[1].position, triangle[2].position))
 				{
 					continue;
 				}
+				// move to screen space
 				for (size_t t = 0; t < triangle.size(); ++t)
 				{
 					triangle[t].position = MathHelper::TransformCoord(triangle[t].position, matScreen);
