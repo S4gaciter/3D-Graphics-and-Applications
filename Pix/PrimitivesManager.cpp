@@ -134,7 +134,7 @@ bool PrimitivesManager::EndDraw()
 		const Matrix4 matView = Camera::Get()->GetViewMatrix();
 		const Matrix4 matProj = Camera::Get()->GetProjectionMatrix();
 		const Matrix4 matScreen = GetScreenTransform();
-		const Matrix4 matNDC = matWorld * matView * matProj;
+		const Matrix4 matNDC = matView * matProj;
 
 		for (size_t i = 2; i < mVertexBuffer.size(); i += 3)
 		{
