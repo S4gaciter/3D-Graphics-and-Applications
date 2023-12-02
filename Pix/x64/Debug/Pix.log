@@ -1,2 +1,45 @@
-﻿  PrimitivesManager.cpp
+﻿  Camera.cpp
+  Clipper.cpp
+  CmdAddVertex.cpp
+  CmdBeginDraw.cpp
+  CmdDrawPixel.cpp
+  CmdEndDraw.cpp
+  CmdLights.cpp
+  CmdModel.cpp
+  CmdPopMatrix.cpp
+  CmdPushRotationX.cpp
+  CmdPushRotationY.cpp
+  CmdPushRotationZ.cpp
+  CmdPushScaling.cpp
+  CmdPushTranslation.cpp
+  CmdSetCameraDirection.cpp
+  CmdSetCameraFar.cpp
+  CmdSetCameraFov.cpp
+C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\Pix\CmdSetCameraFov.cpp(15,42): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  CmdSetCameraNear.cpp
+  CmdSetCameraPosition.cpp
+  CmdSetClipping.cpp
+  Generating Code...
+  Compiling...
+  CmdSetColor.cpp
+  CmdSetCullMode.cpp
+  CmdSetFillMode.cpp
+  CmdSetShading.cpp
+  CommandDictionary.cpp
+  DirectionalLight.cpp
+  Graphics.cpp
+  LightManager.cpp
+  MathHelper.cpp
+  MatrixStack.cpp
+  Model.cpp
+  ModelCache.cpp
+  PointLight.cpp
+  PrimitivesManager.cpp
+  Rasterizer.cpp
+C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\Pix\Rasterizer.cpp(33,77): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\Pix\Rasterizer.cpp(33,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\Pix\Rasterizer.cpp(40,47): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\Pix\Rasterizer.cpp(40,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  SpotLight.cpp
+  Generating Code...
   Pix.vcxproj -> C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\x64\Debug\Pix.exe

@@ -181,6 +181,7 @@
     <ClCompile Include="CmdEndDraw.cpp" />
     <ClCompile Include="CmdLights.cpp" />
     <ClCompile Include="CmdMaterial.cpp" />
+    <ClCompile Include="CmdModel.cpp" />
     <ClCompile Include="CmdPopMatrix.cpp" />
     <ClCompile Include="CmdPushRotationX.cpp" />
     <ClCompile Include="CmdPushRotationY.cpp" />
@@ -197,6 +198,7 @@
     <ClCompile Include="CmdSetCullMode.cpp" />
     <ClCompile Include="CmdSetFillMode.cpp" />
     <ClCompile Include="CmdSetResolution.cpp" />
+    <ClCompile Include="CmdSetShading.cpp" />
     <ClCompile Include="CmdSetViewport.cpp" />
     <ClCompile Include="CmdShowViewport.cpp" />
     <ClCompile Include="CmdVarFloat.cpp" />
@@ -208,11 +210,14 @@
     <ClCompile Include="MaterialManager.cpp" />
     <ClCompile Include="MathHelper.cpp" />
     <ClCompile Include="MatrixStack.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="ModelCache.cpp" />
     <ClCompile Include="PixEditor.cpp" />
     <ClCompile Include="PointLight.cpp" />
     <ClCompile Include="PrimitivesManager.cpp" />
     <ClCompile Include="Rasterizer.cpp" />
     <ClCompile Include="ScriptParser.cpp" />
+    <ClCompile Include="SpotLight.cpp" />
     <ClCompile Include="TextEditor.cpp" />
     <ClCompile Include="VariableCache.cpp" />
     <ClCompile Include="Viewport.cpp" />
@@ -233,6 +238,7 @@
     <ClInclude Include="CmdEndDraw.h" />
     <ClInclude Include="CmdLights.h" />
     <ClInclude Include="CmdMaterial.h" />
+    <ClInclude Include="CmdModel.h" />
     <ClInclude Include="CmdPopMatrix.h" />
     <ClInclude Include="CmdPushRotationX.h" />
     <ClInclude Include="CmdPushRotationY.h" />
@@ -249,6 +255,7 @@
     <ClInclude Include="CmdSetCullMode.h" />
     <ClInclude Include="CmdSetFillMode.h" />
     <ClInclude Include="CmdSetResolution.h" />
+    <ClInclude Include="CmdSetShading.h" />
     <ClInclude Include="CmdSetViewport.h" />
     <ClInclude Include="CmdShowViewport.h" />
     <ClInclude Include="CmdVarFloat.h" />
@@ -263,12 +270,15 @@
     <ClInclude Include="MathHelper.h" />
     <ClInclude Include="Matrix4.h" />
     <ClInclude Include="MatrixStack.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="ModelCache.h" />
     <ClInclude Include="PixEditor.h" />
     <ClInclude Include="PointLight.h" />
     <ClInclude Include="PrimitivesManager.h" />
     <ClInclude Include="Rasterizer.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="ScriptParser.h" />
+    <ClInclude Include="SpotLight.h" />
     <ClInclude Include="TextEditor.h" />
     <ClInclude Include="VariableCache.h" />
     <ClInclude Include="Vector2.h" />

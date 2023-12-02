@@ -130,10 +130,15 @@ bool PrimitivesManager::EndDraw()
 
 	case Topology::Triangle:
 	{
+		// world space
         const Matrix4 matWorld = MatrixStack::Get()->GetTransform();
+		// viewport space
 		const Matrix4 matView = Camera::Get()->GetViewMatrix();
+		// camera projection space
 		const Matrix4 matProj = Camera::Get()->GetProjectionMatrix();
+		// screen space
 		const Matrix4 matScreen = GetScreenTransform();
+		// normalized device coordinate, or NDC space
 		const Matrix4 matNDC = matView * matProj;
 
 		for (size_t i = 2; i < mVertexBuffer.size(); i += 3)
@@ -141,21 +146,36 @@ bool PrimitivesManager::EndDraw()
 			std::vector<Vertex> triangle = { mVertexBuffer[i - 2], mVertexBuffer[i - 1], mVertexBuffer[i] };
 			if (mApplyTransform)
 			{
-				Vector3 facingNormal = GetFacingNormal(triangle[0].position,
-					triangle[1].position, triangle[2].position);
+				if (MathHelper::CheckEqual(MathHelper::MagnitudeSquared(triangle[0].normal), 0.0f))
+				{
+					Vector3 facingNormal = GetFacingNormal(triangle[0].position,
+								     triangle[1].position, triangle[2].position);
+					for (size_t t = 0; t < triangle.size(); ++t)
+					{
+						triangle[t].normal = facingNormal;
+					}
+				}
+
 				// move to world space
 				for (size_t t = 0; t < triangle.size(); ++t)
 				{
 					triangle[t].position = MathHelper::TransformCoord(triangle[t].position, matWorld);
-					triangle[t].normal = MathHelper::TransformNormal(facingNormal, matWorld);
+					triangle[t].normal = MathHelper::TransformNormal(triangle[t].normal, matWorld);
+					triangle[t].worldPosition = triangle[t].position;
+						triangle[t].worldNormal = triangle[t].normal;
 				}
-				// calculate lighting
-				LightManager* lm = LightManager::Get();
-				for (size_t t = 0; t < triangle.size(); ++t)
+
+				if (Rasterizer::Get()->GetShadeMode() != ShadeMode::Phong)
 				{
-					Vertex& v = triangle[t];
-					v.color *= lm->ComputeLightColor(v.position, v.normal);
+					// calculate lighting
+					LightManager* lm = LightManager::Get();
+					for (size_t t = 0; t < triangle.size(); ++t)
+					{
+						Vertex& v = triangle[t];
+						v.color *= lm->ComputeLightColor(v.worldPosition, v.worldNormal);
+					}
 				}
+
 				// move to NDC space
 				for (size_t t = 0; t < triangle.size(); ++t)
 				{

@@ -16,6 +16,7 @@ public:
 	void SetDiffuse(const X::Color& diffuse) { mDiffuse = diffuse; }
 	// enhanced color at lighting focal point
 	void SetSpecular(const X::Color& specular) { mSpecular = specular; }
+
 protected:
 	X::Color mAmbient = X::Colors::White;
 	X::Color mDiffuse = X::Colors::White;
