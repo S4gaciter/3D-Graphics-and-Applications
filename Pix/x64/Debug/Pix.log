@@ -1,45 +1,66 @@
-﻿  Camera.cpp
-  Clipper.cpp
-  CmdAddVertex.cpp
-  CmdBeginDraw.cpp
-  CmdDrawPixel.cpp
-  CmdEndDraw.cpp
-  CmdLights.cpp
-  CmdModel.cpp
-  CmdPopMatrix.cpp
-  CmdPushRotationX.cpp
-  CmdPushRotationY.cpp
-  CmdPushRotationZ.cpp
-  CmdPushScaling.cpp
-  CmdPushTranslation.cpp
-  CmdSetCameraDirection.cpp
-  CmdSetCameraFar.cpp
-  CmdSetCameraFov.cpp
-C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\Pix\CmdSetCameraFov.cpp(15,42): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  CmdSetCameraNear.cpp
-  CmdSetCameraPosition.cpp
-  CmdSetClipping.cpp
-  Generating Code...
-  Compiling...
-  CmdSetColor.cpp
-  CmdSetCullMode.cpp
-  CmdSetFillMode.cpp
-  CmdSetShading.cpp
-  CommandDictionary.cpp
-  DirectionalLight.cpp
+﻿  CommandDictionary.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\xmemory(682,47): error C2661: 'std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>::pair': no overloaded function takes 2 arguments
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\xtree(804): message : see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const char*,std::unique_ptr<CmdSetTexture,std::default_delete<CmdSetTexture>>>(_Alloc &,_Objty *const ,const char *&&,std::unique_ptr<CmdSetTexture,std::default_delete<CmdSetTexture>> &&)' being compiled
+          with
+          [
+              _Alloc=std::allocator<std::_Tree_node<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>,std::_Default_allocator_traits<std::allocator<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>>>::void_pointer>>,
+              _Ty=std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>,
+              _Objty=std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\xtree(805): message : see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const char*,std::unique_ptr<CmdSetTexture,std::default_delete<CmdSetTexture>>>(_Alloc &,_Objty *const ,const char *&&,std::unique_ptr<CmdSetTexture,std::default_delete<CmdSetTexture>> &&)' being compiled
+          with
+          [
+              _Alloc=std::allocator<std::_Tree_node<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>,std::_Default_allocator_traits<std::allocator<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>>>::void_pointer>>,
+              _Ty=std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>,
+              _Objty=std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\xtree(992): message : see reference to function template instantiation 'std::_Tree_temp_node<std::allocator<std::_Tree_node<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>,std::_Default_allocator_traits<_Alloc>::void_pointer>>>::_Tree_temp_node<_Ty,std::unique_ptr<CmdSetTexture,std::default_delete<CmdSetTexture>>>(_Alnode &,std::_Tree_node<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>,std::_Default_allocator_traits<_Alloc>::void_pointer> *,_Ty &&,std::unique_ptr<CmdSetTexture,std::default_delete<CmdSetTexture>> &&)' being compiled
+          with
+          [
+              _Alloc=std::allocator<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>>,
+              _Ty=const char *,
+              _Alnode=std::allocator<std::_Tree_node<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>,std::_Default_allocator_traits<std::allocator<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>>>::void_pointer>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\xtree(1008): message : see reference to function template instantiation 'std::_Tree_temp_node<std::allocator<std::_Tree_node<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>,std::_Default_allocator_traits<_Alloc>::void_pointer>>>::_Tree_temp_node<_Ty,std::unique_ptr<CmdSetTexture,std::default_delete<CmdSetTexture>>>(_Alnode &,std::_Tree_node<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>,std::_Default_allocator_traits<_Alloc>::void_pointer> *,_Ty &&,std::unique_ptr<CmdSetTexture,std::default_delete<CmdSetTexture>> &&)' being compiled
+          with
+          [
+              _Alloc=std::allocator<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>>,
+              _Ty=const char *,
+              _Alnode=std::allocator<std::_Tree_node<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>,std::_Default_allocator_traits<std::allocator<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>>>::void_pointer>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\xtree(1029): message : see reference to function template instantiation 'std::pair<std::_Tree_node<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>,std::_Default_allocator_traits<_Alloc>::void_pointer> *,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::_Emplace<const char*,std::unique_ptr<CmdSetTexture,std::default_delete<CmdSetTexture>>>(const char *&&,std::unique_ptr<CmdSetTexture,std::default_delete<CmdSetTexture>> &&)' being compiled
+          with
+          [
+              _Alloc=std::allocator<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>>,
+              _Kty=std::string,
+              _Ty=std::unique_ptr<Command,std::default_delete<Command>>,
+              _Pr=std::less<std::string>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\xtree(1030): message : see reference to function template instantiation 'std::pair<std::_Tree_node<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>,std::_Default_allocator_traits<_Alloc>::void_pointer> *,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::_Emplace<const char*,std::unique_ptr<CmdSetTexture,std::default_delete<CmdSetTexture>>>(const char *&&,std::unique_ptr<CmdSetTexture,std::default_delete<CmdSetTexture>> &&)' being compiled
+          with
+          [
+              _Alloc=std::allocator<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>>,
+              _Kty=std::string,
+              _Ty=std::unique_ptr<Command,std::default_delete<Command>>,
+              _Pr=std::less<std::string>
+          ]
+E:\Github\3D-Graphics-and-Applications\Pix\CommandDictionary.cpp(137): message : see reference to function template instantiation 'std::pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>>>>,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::emplace<const char*,std::unique_ptr<CmdSetTexture,std::default_delete<CmdSetTexture>>>(const char *&&,std::unique_ptr<CmdSetTexture,std::default_delete<CmdSetTexture>> &&)' being compiled
+          with
+          [
+              _Kty=std::string,
+              _Ty=std::unique_ptr<Command,std::default_delete<Command>>,
+              _Pr=std::less<std::string>,
+              _Alloc=std::allocator<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>>
+          ]
+E:\Github\3D-Graphics-and-Applications\Pix\CommandDictionary.cpp(140): message : see reference to function template instantiation 'std::pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>>>>,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::emplace<const char*,std::unique_ptr<CmdSetTexture,std::default_delete<CmdSetTexture>>>(const char *&&,std::unique_ptr<CmdSetTexture,std::default_delete<CmdSetTexture>> &&)' being compiled
+          with
+          [
+              _Kty=std::string,
+              _Ty=std::unique_ptr<Command,std::default_delete<Command>>,
+              _Pr=std::less<std::string>,
+              _Alloc=std::allocator<std::pair<const std::string,std::unique_ptr<Command,std::default_delete<Command>>>>
+          ]
+E:\Github\3D-Graphics-and-Applications\Pix\CommandDictionary.cpp(78): message : see reference to function template instantiation 'void CommandDictionary::RegisterCommand<CmdSetTexture>(void)' being compiled
   Graphics.cpp
-  LightManager.cpp
-  MathHelper.cpp
-  MatrixStack.cpp
-  Model.cpp
-  ModelCache.cpp
-  PointLight.cpp
-  PrimitivesManager.cpp
-  Rasterizer.cpp
-C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\Pix\Rasterizer.cpp(33,77): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\Pix\Rasterizer.cpp(33,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\Pix\Rasterizer.cpp(40,47): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\Pix\Rasterizer.cpp(40,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  SpotLight.cpp
+  TextureCache.cpp
   Generating Code...
-  Pix.vcxproj -> C:\Users\ericg\OneDrive\Documents\School\3D Graphics & Applications\3D-Graphics-and-Applications\x64\Debug\Pix.exe

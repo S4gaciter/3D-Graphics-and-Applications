@@ -72,11 +72,17 @@ PrimitivesManager* PrimitivesManager::Get()
 void PrimitivesManager::OnNewFrame()
 {
 	mCullMode = CullMode::Back;
+	mCorrectUV = false;
 }
 
 void PrimitivesManager::SetCullMode(CullMode mode)
 {
 	mCullMode = mode;
+}
+
+void PrimitivesManager::SetCorrectUV(bool correct)
+{
+	mCorrectUV = correct;
 }
 
 bool PrimitivesManager::BeginDraw(Topology topology, bool applyTransform)
@@ -162,10 +168,23 @@ bool PrimitivesManager::EndDraw()
 					triangle[t].position = MathHelper::TransformCoord(triangle[t].position, matWorld);
 					triangle[t].normal = MathHelper::TransformNormal(triangle[t].normal, matWorld);
 					triangle[t].worldPosition = triangle[t].position;
-						triangle[t].worldNormal = triangle[t].normal;
+					triangle[t].worldNormal = triangle[t].normal;
 				}
-
-				if (Rasterizer::Get()->GetShadeMode() != ShadeMode::Phong)
+				if (triangle[0].color.z < 0.0f)
+				{
+					if (mCorrectUV)
+					{
+						for (size_t t = 0; t < triangle.size(); ++t)
+						{
+							Vertex& v = triangle[t];
+							Vector3 viewPos = MathHelper::TransformCoord(triangle[t].worldPosition, matView);
+							v.color.x /= viewPos.z;
+							v.color.y /= viewPos.z;
+							v.color.w = 1.0f / viewPos.z;
+						}
+					}
+				}
+				else if (Rasterizer::Get()->GetShadeMode() != ShadeMode::Phong)
 				{
 					// calculate lighting
 					LightManager* lm = LightManager::Get();

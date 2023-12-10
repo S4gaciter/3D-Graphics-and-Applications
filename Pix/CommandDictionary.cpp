@@ -28,6 +28,8 @@
 #include "CmdMaterial.h"
 #include "CmdModel.h"
 #include "CmdSetShading.h"
+#include "CmdSetTexture.h"
+#include "CmdSetCorrectUV.h"
 
 CommandDictionary* CommandDictionary::Get()
 {
@@ -73,6 +75,8 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdAddPointLight>();
 	RegisterCommand<CmdAddSpotLight>();
 	RegisterCommand<CmdSetShading>();
+	RegisterCommand<CmdSetTexture>();
+	RegisterCommand<CmdSetCorrectUV>();
 
 	// Material Commands
 	RegisterCommand<CmdSetMaterialAmbient>();
